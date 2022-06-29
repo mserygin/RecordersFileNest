@@ -13,12 +13,12 @@ services:
     ports:
       - ${PORT}:${PORT}
     depends_on:
-      - postgres_db
+      - postgres_db_recorder
     links:
-      - postgres_db
+      - postgres_db_recorder
     restart: always
-  postgres_db:
-    container_name: postgres_db
+  postgres_db_recorder:
+    container_name: postgres_db_recorder
     image: postgres:12.1
     environment:
       POSTGRES_USER: ${POSTGRES_USER}

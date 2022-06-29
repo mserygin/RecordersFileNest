@@ -1,7 +1,7 @@
-import { NestFactory } from "@nestjs/core";
-import { AppModule } from "./app.module";
+import { NestFactory } from '@nestjs/core';
+import { AppModule } from './app.module';
 
-require("dotenv").config();
+require('dotenv').config();
 
 async function start() {
   const PORT = process.env.PORT || 3000;
