@@ -1,14 +1,20 @@
-import { Controller, Get } from '@nestjs/common';
+import { Body, Controller, Get, Post } from '@nestjs/common';
 import { UserService } from './user.service';
 import { ApiTags } from '@nestjs/swagger';
+import { loginDto } from './dto/user.dto';
 
 @Controller('user')
 @ApiTags('user')
 export class UserController {
-  constructor(private readonly userService: UserService) {}
+    constructor(private readonly userService: UserService) {}
 
-  @Get('all')
-  getUsers() {
-    return this.userService.getUsers();
-  }
+    @Post('login')
+    login(@Body() data: loginDto) {
+        return this.userService.login(data);
+    }
+
+    @Post('register')
+    register(@Body() data: loginDto): Promise<string> {
+        return this.userService.register(data);
+    }
 }
