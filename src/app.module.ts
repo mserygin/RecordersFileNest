@@ -4,6 +4,7 @@ import { DatabaseModule } from './config/database.module';
 import { StandardsModule } from './standarts/standards.module';
 import { FilesModule } from './files/files.module';
 import { ReportModule } from './report/report.module';
+import { AppController } from './app.controller';
 
 @Module({
     imports: [
@@ -13,5 +14,6 @@ import { ReportModule } from './report/report.module';
         FilesModule,
         ReportModule,
     ],
+    controllers: [AppController],
 })
 export class AppModule {}
