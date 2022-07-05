@@ -31,7 +31,7 @@ export class Report {
         eager: true,
     })
     @JoinColumn({
-        name: 'standardId',
+        name: 'standard_id',
     })
     @Index()
     standard: Standards;

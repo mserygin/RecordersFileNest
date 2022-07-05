@@ -17,11 +17,11 @@ export class ReportService {
         const trackedReport = await this.connection.query(`
         select report.id, student_id, standard_id, creator_id, link_document, hash
         from report
-                 join standards s on s.id = report.standard_id and creator_id = ${userid};`);
+                 join standards s on s.id = standard_id and creator_id = ${userid};`);
 
         const meReport = await this.connection.query(`
         select report.id, student_id, standard_id, link_document, hash
-        from report join standards s on s.id = report.standard_id
+        from report join standards s on s.id = standard_id
         where student_id = ${userid};
     `);
         return {
