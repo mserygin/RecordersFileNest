@@ -1,4 +1,4 @@
-version: '3.8'
+version: '3.3'
 
 services:
   main:
@@ -10,6 +10,7 @@ services:
     volumes:
       - .:/app
       - /app/node_modules
+      - ./uploads:/app/uploads
     ports:
       - ${PORT}:${PORT}
     depends_on:
@@ -19,7 +20,7 @@ services:
     restart: always
   postgres_db_recorder:
     container_name: postgres_db_recorder
-    image: postgres:12.1
+    image: postgres:10
     environment:
       POSTGRES_USER: ${POSTGRES_USER}
       POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}

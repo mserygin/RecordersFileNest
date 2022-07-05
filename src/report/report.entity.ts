@@ -29,10 +29,9 @@ export class Report {
 
     @ManyToOne(() => Standards, {
         eager: true,
-        primary: true,
     })
     @JoinColumn({
-        name: 'standard_id',
+        name: 'standardId',
     })
     @Index()
     standard: Standards;

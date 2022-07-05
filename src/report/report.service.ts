@@ -41,6 +41,7 @@ export class ReportService {
         const userCurrent = await this.connection.manager.findOne(User, {
             where: { id: studentId },
         });
+
         const newReport: Report = new Report();
         newReport.standard = standardCurrent;
         newReport.linkDocument = linkDocument;
